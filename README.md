@@ -51,6 +51,8 @@ The Jump-Box-Provisioner Machine is allowed to access the ELK-VM through the doc
 
 
 The summary access policy in place can be found below.
+
+
 ![Access_policy_table](https://user-images.githubusercontent.com/72633491/113364884-46220700-931a-11eb-8f8b-acf44f231398.jpg)
 
 
