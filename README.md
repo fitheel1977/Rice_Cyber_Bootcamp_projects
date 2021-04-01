@@ -83,9 +83,15 @@ The playbook implements the following actions.
 Target Machines & Beats 
 The ELK server is configured to monitor the following VMs:
 
-Web-1 10.0.0.5 Web-2 10.0.0.6 We have installed the following Beats on these machines:
+Web-1 10.0.0.5 
+Web-2 10.0.0.6 
 
-filebeat & metricbeat These Beats allow us to collect the following information from the VM:
+We have installed the following Beats on these machines:
+
+filebeat 
+metricbeat 
+
+These Beats allow us to collect the following information from the VM:
 
 Filebeat organizes log information pertaining to the file system on a given machine and sends the results to Logstash and Elasticsearch. This allows us to reduce the amount of logs pulled and monitor specifically when files are changed.
 
@@ -119,7 +125,8 @@ Edit the /etc/ansible/hosts file to add web server and elk server ip addresses. 
 I.E.:[webservers]
 
 10.0.0.5 ansible_python_interpreter=/usr/bin/python3
-10.0.0.6 ansible_python_interpreter=/usr/bin/python3
+
+12.0.0.6 ansible_python_interpreter=/usr/bin/python3
 
 
 
@@ -128,7 +135,9 @@ Deployment Verification
 When you have successfully run the playbook, go to http//:[your_elk_server_ip:5601]/app/kibana and:
 
 1.Go to the filebeat/metricbeat installation page
+
 2.Proceed to Step 5: Module status at the bottom of the page
+
 3.Click "Check Data" to see if Data was successfully received
 
 
