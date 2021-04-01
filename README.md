@@ -34,12 +34,9 @@ What analytics does metricbeat record?
 
 
 The configuration details of the machines are found below.
+![VM configuration](https://user-images.githubusercontent.com/72633491/113364810-11ae4b00-931a-11eb-8e34-84a4d6969f36.jpg)
 
-Name        Function       IP Address       Operating System
-Jump Box   Gateway        10.0.0.7                Linux 
-Web-1      Web Server     10.0.0.5                Linux  
-Web-2      Web Server     10.0.0.6                Linux 
-ELK-VM     Log Server      10.1.0.4                Linux
+
 
 Access Policies 
 The internal network VMs are not exposed to public internet access.
@@ -53,18 +50,11 @@ Machines within the network can only be accessed by the Jump-Box-Provisioner uti
 The Jump-Box-Provisioner Machine is allowed to access the ELK-VM through the docker container. However, a private workstation is allowed to connect to Kibana through the web browser on port 5601.
 
 
-
-
-
-
 The summary access policy in place can be found below.
-Name             Publicly Accessible          Allowed IP Addresses 
-Load Balancer           Yes                       Personal/Open 
-Jump Box                Yes                       Personal 
-Web-1                   No                        10.0.0.7 
-Web-2                   No                        10.0.0.7  
-ELK-VM                  Yes                       10.0.0.{7,5,6}/local IP:5601 
-Elk Configuration 
+![Access_policy_table](https://user-images.githubusercontent.com/72633491/113364884-46220700-931a-11eb-8f8b-acf44f231398.jpg)
+
+
+
 Ansible is used to automate configuration of the ELK machine. No configuration was performed manually, which is a benefit that allows any network administrator to implement these changes/additions across multiple machines within a given network. They can modify the playbook to their specific needs before deployment which allows this method to be scalable, repeatable, and uniform each time.
 
 When a particular piece of infrastructure is desired, all that is required in the future is the code that defines that item and deployment will be simple. This will also allow security protocols to be built from the ground up. Further facilitation of simple logging and version control. The main purpose of this setup is implementation Continuous Integration/Continuous Deployment '(CI/CD)' to our virtual network using updates to the various configuration files rather than one-to-one machine interaction/maintenance.
